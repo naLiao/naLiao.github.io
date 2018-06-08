@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 移动端 | Nova&#39;s blog</title>
+  <title>React Router | Nova&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Nova&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/tags/移动端/index.html">
+  <meta name="description" content="入门路由就是URL，操作URL就是操作路由。 1、优点  良好的交互体验用户不需要重新刷新页面，获取数据也是通过Ajax异步获取，页面显示流畅。 良好的前后端工作分离模式单页Web应用可以和RESTful规约一起使用，通过REST API提供接口数据，并使用Ajax异步获取，这样有助于分离客户端和服务器端工作。更进一步，可以在客户端也可以分解为静态页面和页面交互两个部分。 减轻服务器压力服务器只">
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Router">
+<meta property="og:url" content="http://yoursite.com/2018/06/07/React/index.html">
 <meta property="og:site_name" content="Nova&#39;s blog">
+<meta property="og:description" content="入门路由就是URL，操作URL就是操作路由。 1、优点  良好的交互体验用户不需要重新刷新页面，获取数据也是通过Ajax异步获取，页面显示流畅。 良好的前后端工作分离模式单页Web应用可以和RESTful规约一起使用，通过REST API提供接口数据，并使用Ajax异步获取，这样有助于分离客户端和服务器端工作。更进一步，可以在客户端也可以分解为静态页面和页面交互两个部分。 减轻服务器压力服务器只">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-08T03:33:23.136Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nova&#39;s blog">
+<meta name="twitter:title" content="React Router">
+<meta name="twitter:description" content="入门路由就是URL，操作URL就是操作路由。 1、优点  良好的交互体验用户不需要重新刷新页面，获取数据也是通过Ajax异步获取，页面显示流畅。 良好的前后端工作分离模式单页Web应用可以和RESTful规约一起使用，通过REST API提供接口数据，并使用Ajax异步获取，这样有助于分离客户端和服务器端工作。更进一步，可以在客户端也可以分解为静态页面和页面交互两个部分。 减轻服务器压力服务器只">
   
     <link rel="alternative" href="/atom.xml" title="Nova&#39;s blog" type="application/atom+xml">
   
@@ -146,64 +151,224 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-React" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/18/移动端总结Part 1/" class="archive-article-date">
-  	<time datetime="2018-05-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/18/移动端总结Part 1/">移动端总结Part1</a>
+    <h1 class="article-title" itemprop="name">
+      React Router
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/06/07/React/" class="archive-article-date">
+  	<time datetime="2018-06-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h3 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h3><p>路由就是URL，操作URL就是操作路由。</p>
+<p>1、优点</p>
+<ol>
+<li>良好的交互体验<br>用户不需要重新刷新页面，获取数据也是通过Ajax异步获取，页面显示流畅。</li>
+<li>良好的前后端工作分离模式<br>单页Web应用可以和RESTful规约一起使用，通过REST API提供接口数据，并使用Ajax异步获取，这样有助于分离客户端和服务器端工作。更进一步，可以在客户端也可以分解为静态页面和页面交互两个部分。</li>
+<li>减轻服务器压力<br>服务器只用出数据就可以，不用管展示逻辑和页面合成，吞吐能力会提高几倍；</li>
+<li>共用一套后端程序代码<br>不用修改后端程序代码就可以同时用于Web界面、手机、平板等多种客户端；</li>
+</ol>
+<p>2、缺点</p>
+<ol>
+<li>SEO难度较高<br>由于所有的内容都在一个页面中动态替换显示，所以在SEO上其有着天然的弱势，所以如果你的站点对SEO很看重，且要用单页应用，那么就做些静态页面给搜索引擎用吧。</li>
+<li>前进、后退管理<br>由于单页Web应用在一个页面中显示所有的内容，所以不能使用浏览器的前进后退功能，所有的页面切换需要自己建立堆栈管理，当然此问题也有解决方案，比如利用URI中的散列+iframe实现。</li>
+<li>初次加载耗时多<br>为实现单页Web应用功能及显示效果，需要在加载页面的时候将JavaScript、CSS统一加载，部分页面可以在需要的时候加载。所以必须对JavaScript及CSS代码进行合并压缩处理，如果使用第三方库，建议使用一些大公司的CDN，因此带宽的消耗是必然的。</li>
+</ol>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><ol>
+<li>安装 npm install react-router -S</li>
+<li>下载 npm install react-router-dom -S</li>
+<li>引入 import { BrowserRouter或者HashRouter as Router} from ‘react-router-dom’</li>
+<li>ReactDOM.render(<pre><code>&lt;Router&gt;
+   &lt;App /&gt;   在根节点下使用
+ &lt;/Router&gt;
+ ,
+ document.getElementById(&apos;root&apos;)
+</code></pre> )</li>
+</ol>
+<h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><p>每个路由器都会创建一个history对象并用其保持追踪当前location并且在有变化时对网站进行重新渲染。这个history对象保证了React Router提供的其他组件的可用性，所以其他组件必须在router内部渲染。一个React Router组件如果向父级上追溯却找不到router组件，那么这个组件将无法正常工作。</p>
+<h2 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h2><p>路由器组件无法接受两个及以上的子元素。基于这种限制的存在，创建一个<app>组件来渲染应用其余部分是一个有效的方法（对于服务端渲染，将应用从router组件中分离也是重要的）。</app></p>
+<p><a href="https://segmentfault.com/a/1190000010174260" target="_blank" rel="noopener">https://segmentfault.com/a/1190000010174260</a></p>
+<h3 id="Route"><a href="#Route" class="headerlink" title="Route"></a>Route</h3><p>当一个路由的path匹配成功后，路由用来确定渲染结果的参数有三种。只需要提供其中一个即可。</p>
+<ul>
+<li>component ： 一个React组件。当带有component参数的route匹配成功后，route会返回一个新的元素，其为component参数所对应的React组件（使用React.createElement创建）。</li>
+<li>render ： 一个返回React element的函数。当匹配成功后调用该函数。该过程与传入component参数类似，并且对于行级渲染与需要向元素传入额外参数的操作会更有用。</li>
+<li>children ： 一个返回React element的函数。与上述两个参数不同，无论route是否匹配当前location，其都会被渲染。</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/07/React/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/05/23/JSON转出/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JSON与对象的相互转换</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#入门"><span class="toc-number">1.</span> <span class="toc-text">入门</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装步骤"><span class="toc-number"></span> <span class="toc-text">安装步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#history"><span class="toc-number"></span> <span class="toc-text">history</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#渲染"><span class="toc-number"></span> <span class="toc-text">渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Route"><span class="toc-number">1.</span> <span class="toc-text">Route</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+  <div id="SOHUCS" sid="React" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -226,9 +391,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

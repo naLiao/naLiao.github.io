@@ -148,6 +148,114 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-React" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/07/React/">React Router</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/07/React/" class="archive-article-date">
+  	<time datetime="2018-06-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h3 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h3><p>路由就是URL，操作URL就是操作路由。</p>
+<p>1、优点</p>
+<ol>
+<li>良好的交互体验<br>用户不需要重新刷新页面，获取数据也是通过Ajax异步获取，页面显示流畅。</li>
+<li>良好的前后端工作分离模式<br>单页Web应用可以和RESTful规约一起使用，通过REST API提供接口数据，并使用Ajax异步获取，这样有助于分离客户端和服务器端工作。更进一步，可以在客户端也可以分解为静态页面和页面交互两个部分。</li>
+<li>减轻服务器压力<br>服务器只用出数据就可以，不用管展示逻辑和页面合成，吞吐能力会提高几倍；</li>
+<li>共用一套后端程序代码<br>不用修改后端程序代码就可以同时用于Web界面、手机、平板等多种客户端；</li>
+</ol>
+<p>2、缺点</p>
+<ol>
+<li>SEO难度较高<br>由于所有的内容都在一个页面中动态替换显示，所以在SEO上其有着天然的弱势，所以如果你的站点对SEO很看重，且要用单页应用，那么就做些静态页面给搜索引擎用吧。</li>
+<li>前进、后退管理<br>由于单页Web应用在一个页面中显示所有的内容，所以不能使用浏览器的前进后退功能，所有的页面切换需要自己建立堆栈管理，当然此问题也有解决方案，比如利用URI中的散列+iframe实现。</li>
+<li>初次加载耗时多<br>为实现单页Web应用功能及显示效果，需要在加载页面的时候将JavaScript、CSS统一加载，部分页面可以在需要的时候加载。所以必须对JavaScript及CSS代码进行合并压缩处理，如果使用第三方库，建议使用一些大公司的CDN，因此带宽的消耗是必然的。</li>
+</ol>
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><ol>
+<li>安装 npm install react-router -S</li>
+<li>下载 npm install react-router-dom -S</li>
+<li>引入 import { BrowserRouter或者HashRouter as Router} from ‘react-router-dom’</li>
+<li>ReactDOM.render(<pre><code>&lt;Router&gt;
+   &lt;App /&gt;   在根节点下使用
+ &lt;/Router&gt;
+ ,
+ document.getElementById(&apos;root&apos;)
+</code></pre> )</li>
+</ol>
+<h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><p>每个路由器都会创建一个history对象并用其保持追踪当前location并且在有变化时对网站进行重新渲染。这个history对象保证了React Router提供的其他组件的可用性，所以其他组件必须在router内部渲染。一个React Router组件如果向父级上追溯却找不到router组件，那么这个组件将无法正常工作。</p>
+<h2 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h2><p>路由器组件无法接受两个及以上的子元素。基于这种限制的存在，创建一个<app>组件来渲染应用其余部分是一个有效的方法（对于服务端渲染，将应用从router组件中分离也是重要的）。</app></p>
+<p><a href="https://segmentfault.com/a/1190000010174260" target="_blank" rel="noopener">https://segmentfault.com/a/1190000010174260</a></p>
+<h3 id="Route"><a href="#Route" class="headerlink" title="Route"></a>Route</h3><p>当一个路由的path匹配成功后，路由用来确定渲染结果的参数有三种。只需要提供其中一个即可。</p>
+<ul>
+<li>component ： 一个React组件。当带有component参数的route匹配成功后，route会返回一个新的元素，其为component参数所对应的React组件（使用React.createElement创建）。</li>
+<li>render ： 一个返回React element的函数。当匹配成功后调用该函数。该过程与传入component参数类似，并且对于行级渲染与需要向元素传入额外参数的操作会更有用。</li>
+<li>children ： 一个返回React element的函数。与上述两个参数不同，无论route是否匹配当前location，其都会被渲染。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/07/React/">more >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JSON转出" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -595,14 +703,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">json</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">js对象</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">ajax</a>
               </li>
              
@@ -612,6 +712,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">json</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">js对象</a>
               </li>
              
               <li class="article-tag-list-item">
